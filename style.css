@@ -1,0 +1,271 @@
+:root {
+    /* Font family for the main text */
+    --font-family-main: "Merriweather", serif;
+    
+    /* Background color and gradient for the body */
+    --color-bg: rgb(56,4,47);
+    --color-bg-gradient: linear-gradient(0deg, rgba(56,4,47,1) 0%, rgba(142,5,118,1) 30%, rgba(169,2,137,1) 70%, rgba(210,1,165,1) 100%);
+    
+    /* Main text color */
+    --color-text-main: white;
+    
+    /* Background color for links */
+    --color-link-bg: #000000c2;
+    
+    /* Text color for links on hover */
+    --color-link-hover: #00ffff;
+    
+    /* Color for neon effect */
+    --color-neon: #A3F0ED;
+    
+    /* Color for blinking dot */
+    --color-blinking-dot: red;
+    
+    /* Background color for link containers */
+    --color-container-link-bg: #9E299F;
+    
+    /* Main box shadow used for links */
+    --box-shadow-main: 0px 5px 22px black;
+    
+    /* Main border radius used throughout the design */
+    --border-radius-main: 16px;
+    
+    /* Font size for titles */
+    --font-size-title: 1.3rem;
+    
+    /* Font size for links */
+    --font-size-link: 16px;
+    
+    /* Font weight for links */
+    --font-weight-link: 600;
+    
+    /* Font size for copyright text */
+    --font-size-copy: 14px;
+    
+    /* Font weight for copyright text */
+    --font-weight-copy: 300;
+    
+    /* Main margin used throughout the design */
+    --margin-main: 0px 16px;
+    
+    /* Main padding used throughout the design */
+    --padding-main: 2px;
+    
+    /* Duration for neon animation */
+    --animation-neon-duration: 3s;
+    
+    /* Duration for blink animation */
+    --animation-blink-duration: 1s;
+    
+    /* Height of the iframe */
+    --iframe-height: 400px;
+    
+    /* Height of the iframe on mobile devices */
+    --iframe-height-mobile: 315px;
+    
+    /* Width of images */
+    --img-width: 30rem;
+    
+    /* Width of images on mobile devices */
+    --img-width-mobile: 25rem;
+    
+    /* Width of the container on mobile devices */
+    --container-width-mobile: 95%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-main);
+    background: var(--color-bg);
+    background: var(--color-bg-gradient);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+    width: 50%;
+    height: 100%;
+}
+
+.container_ultimo_programa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: var(--margin-main);
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.title_streaming {
+    color: var(--color-text-main);
+    text-align: center;
+    font-size: var(--font-size-title);
+}
+
+@keyframes neon {
+    0% {
+        box-shadow: none;
+    }
+    10% {
+        box-shadow: 0 0px 1px var(--color-neon), 0 0px 2px var(--color-neon), 0 0px 3px var(--color-neon), 0px 1px 8px var(--color-neon);
+    }
+    20% {
+        box-shadow: none;
+    }
+    90% {
+        box-shadow: 0 0 1px var(--color-neon), 0 0 2px var(--color-neon), 0 0 3px var(--color-neon), 0px 0px 8px var(--color-neon);
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+
+#linkButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-main);
+    text-decoration: none;
+    background: var(--color-link-bg);
+    border-radius: var(--border-radius-main);
+    animation: neon var(--animation-neon-duration) infinite;
+}
+
+#linkButton:hover {
+    color: var(--color-link-hover);
+}
+
+#iframe_streaming {
+    animation: neon 10s infinite;
+    border-radius: var(--border-radius-main);
+    width: 100%;
+    height: var(--iframe-height);
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.blinking-dot {
+    width: 10px;
+    height: 10px;
+    margin-left: 8px;
+    background-color: var(--color-blinking-dot);
+    border-radius: 50%;
+    animation: blink var(--animation-blink-duration) infinite;
+}
+
+.titulo h1 {
+    color: var(--color-text-main);
+    text-align: center;
+    font-family: var(--font-family-main);
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+.div_foto_perfil {
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div_foto_perfil img {
+    width: var(--img-width);
+}
+
+.container_links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--margin-main);
+}
+
+.container_links a {
+    box-shadow: var(--box-shadow-main);
+    border-radius: var(--border-radius-main);
+    width: 100%;
+    margin: 12px;
+    padding: var(--padding-main);
+    text-decoration: none;
+    color: var(--color-text-main);
+    background-color: var(--color-container-link-bg);
+}
+
+.container_links a p {
+    text-align: center;
+    font-size: var(--font-size-link);
+    font-weight: var(--font-weight-link);
+}
+
+.container_iconos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--margin-main);
+}
+
+.img_icono img {
+    margin: 8px;
+    width: 2rem;
+}
+
+.img_icono {
+    padding: 8px;
+    background-color: var(--color-container-link-bg);
+    border-radius: 50px;
+    margin: 8px;
+}
+
+.copy {
+    margin: var(--margin-main);
+    color: var(--color-text-main);
+    text-align: center;
+}
+
+.copy p {
+    font-weight: var(--font-weight-copy);
+    font-size: var(--font-size-copy);
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        width: var(--container-width-mobile);
+        height: 100%;
+    }
+    .container_ultimo_programa {
+        height: 100%;
+    }
+    .container_links a {
+        box-shadow: var(--box-shadow-main);
+        border-radius: var(--border-radius-main);
+        width: 100%;
+        margin: 12px;
+        padding: var(--padding-main);
+        text-decoration: none;
+        color: var(--color-text-main);
+        background-color: var(--color-container-link-bg);
+    }
+    #iframe_streaming {
+        animation: neon 10s infinite;
+        border-radius: var(--border-radius-main);
+        width: 100%;
+        height: var(--iframe-height-mobile);
+    }
+    .div_foto_perfil img {
+        width: var(--img-width-mobile);
+    }
+}
+
+
